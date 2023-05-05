@@ -5,12 +5,13 @@ def main(table):
     transposed_table = [list(row) for row in zip(*table)]
     clear_transposed_table = []
     for i in range(0, len(transposed_table)):
-        if not all(elem is None for elem in transposed_table[i]):
-            if transposed_table[i] not in clear_transposed_table:
-                clear_transposed_table.append(transposed_table[i])
+        if transposed_table[i] not in clear_transposed_table \
+                and transposed_table[i][0] is not None:
+            clear_transposed_table.append(transposed_table[i])
 
-    clear_transposed_table[0] = [cropped[3:]
-                                 for cropped in clear_transposed_table[0]]
+    clear_transposed_table[0] = [
+        cropped[3:] for cropped in clear_transposed_table[0]
+    ]
 
     dates = []
     surnames = []

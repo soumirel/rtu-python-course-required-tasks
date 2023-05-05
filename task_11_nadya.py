@@ -35,7 +35,7 @@ def main(source):
     a4['B4'] = unpack_from('>H', source, b_address)[0]
     b_address += 2
 
-    a4['B5'] = unpack_from('>Q', source, b_address)[0]
+    a4['B5'] = unpack_from('>q', source, b_address)[0]
     b_address += 8
 
     b6_size = unpack_from('>I', source, b_address)[0]
@@ -113,3 +113,4 @@ def main(source):
     a['A5'] = a5
 
     return a
+
