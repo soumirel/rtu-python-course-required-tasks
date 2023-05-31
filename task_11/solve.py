@@ -1,10 +1,10 @@
 from struct import *
+from tester import Tester
 
 
 def main(source):
     a = {}
 
-    # В задании ошибочная информация о начальной сигнатуре
     global_address = 3
 
     a1 = []
@@ -90,3 +90,8 @@ def main(source):
     a['A8'] = a8
 
     return a
+
+
+if __name__ == '__main__':
+    tester = Tester(main)
+    tester.test()
