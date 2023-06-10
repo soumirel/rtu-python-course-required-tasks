@@ -1,7 +1,4 @@
-class TestData:
-    def __init__(self, source, answer):
-        self.source = source
-        self.answer = answer
+from test_data import TestData
 
 
 class Tester:

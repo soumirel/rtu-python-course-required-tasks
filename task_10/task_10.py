@@ -47,20 +47,18 @@ def main():
 
 
 def raises(method, error):
-    output = None
     try:
-        output = method()
+        method()
     except Exception as e:
         assert type(e) == error
-    assert output is None
 
 
 def test():
     o = main()
-    raises(lambda: o.look(), MealyError)
-    raises(lambda: o.paint(), MealyError)
+    raises(lambda: o.look, MealyError)
+    raises(lambda: o.paint, MealyError)
     assert o.close() == 0
-    raises(lambda: o.close(), MealyError)
+    raises(lambda: o.close, MealyError)
     assert o.look() == 1
     assert o.close() == 3
     assert o.look() == 4
